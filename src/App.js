@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from "./routes/Home";
+import Projects from "./routes/Projects";
+import Error from "./routes/Error";
+import { useState } from "react";
 
-function App() {
+export default function App() {
+  const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") || false)
+
+  localStorage.setItem("darkMode", darkMode)
+  darkMode ? document.querySelector("html").classList.add("dark") : document.querySelector("html").classList.remove("dark")
+
+  function changeTheme() {
+    setDarkMode(prevDarkMode => !prevDarkMode)
+    localStorage.setItem("darkMode", darkMode)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home darkMode={darkMode} changeTheme={changeTheme} />} />
+        <Route path="projects" element={<Projects darkMode={darkMode} changeTheme={changeTheme} />} />
+        <Route path="*" element={<Error darkMode={darkMode} changeTheme={changeTheme} />} />
+      </Routes>
+    </>
   );
 }
-
-export default App;
