@@ -2,7 +2,7 @@ export default function Project(props) {
     if (props.data.featured) {
         return (
             <div className="flex justify-between h-72 bg-white text-black dark:text-white dark:bg-gray-900 rounded-md shadow-md overflow-hidden relative">
-                <div className="flex flex-col gap-y-4 px-10 py-10 z-10 relative z-10">
+                <div className="flex flex-col gap-y-4 px-10 py-10 z-10 relative">
                     <h3 className="font-nunito font-black text-2xl tracking-wider">{props.data.title}</h3>
                     <p>{props.data.description}</p>
                 </div>
