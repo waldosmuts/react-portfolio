@@ -6,7 +6,7 @@ export default function Home(props) {
     return (
         <>
             <Header darkMode={props.darkMode} changeTheme={props.changeTheme} />
-            <Main />
+            <Main darkMode={props.darkMode} />
             <Footer />
         </>
     )

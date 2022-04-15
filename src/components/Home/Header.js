@@ -5,6 +5,7 @@ export default function Header(props) {
     let HeroButterfly
     let HeroDragonFly
     let HeroBug
+
     if (props.darkMode) {
         HeroBeetle = "/images/hero-beetle-dark.png"
         HeroButterfly = "/images/hero-butterfly-dark.png"
@@ -18,7 +19,7 @@ export default function Header(props) {
     }
 
     return (
-        <header className="bg-secondary dark:bg-gray-900">
+        <header className="bg-white dark:bg-gray-900">
             <Navbar />
             <div className="header--hero flex flex-col justify-center items-center relative">
                 <h1 className="font-nunito text-5xl font-black tracking-widest relative -top-10 text-center text-black dark:text-white">

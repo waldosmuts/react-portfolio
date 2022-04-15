@@ -1,10 +1,20 @@
-import ExperienceTop from "../../images/experience-bird_top.png"
-import ExperienceLeft from "../../images/experience-bird_left.png"
-import ExperienceRight from "../../images/experience-bird_right.png"
+export default function Experience(props) {
+    let ExperienceTop
+    let ExperienceLeft
+    let ExperienceRight
 
-export default function Experience() {
+    if (props.darkMode) {
+        ExperienceTop = "/images/experience-bird_top-dark.png"
+        ExperienceLeft = "/images/experience-bird_left-dark.png"
+        ExperienceRight = "/images/experience-bird_right-dark.png"
+    } else {
+        ExperienceTop = "/images/experience-bird_top-light.png"
+        ExperienceLeft = "/images/experience-bird_left-light.png"
+        ExperienceRight = "/images/experience-bird_right-light.png"
+    }
+
     return (
-        <section id="experience" className="main--section py-20 px-32 relative text-black dark:text-white  bg-secondary dark:bg-gray-900">
+        <section id="experience" className="main--section py-20 px-32 relative text-black dark:text-white  bg-white dark:bg-gray-900">
             {/* Background Elements */}
             <svg className="absolute right-20 -top-3 fill-primary" width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z" />

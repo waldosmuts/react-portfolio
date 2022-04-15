@@ -40,22 +40,23 @@ export default function Main() {
     const projectsElements = []
 
     projects.forEach(project => {
+        const projectElement = <Project key={project.id} data={project} />
         if (project.featured) {
-            featuredProjectsElements.push(<Project key={project.id} data={project} />)
+            featuredProjectsElements.push(projectElement)
         } else {
-            projectsElements.push(<Project key={project.id} data={project} />)
+            projectsElements.push(projectElement)
         }
     })
 
     return (
-        <main className="projects--main px-32">
-            <h1>Projects and such</h1>
-            <h2 className="mt-16">Featured Projects</h2>
-            <div>
+        <main className="projects--main font-nunito py-16 px-32 text-black dark:text-white bg-secondary transition dark:bg-gray-800 overflow-y-scroll">
+            <h1 className="font-black text-2xl tracking-wider">projects and such</h1>
+            <h2 className="mt-16 font-black text-2xl tracking-wider">featured projects</h2>
+            <div className="grid grid-cols-1 gap-y-8">
                 {featuredProjectsElements}
             </div>
-            <h2 className="mt-16">Other Projects</h2>
-            <div className="grid grid-cols-3 gap-16">
+            <h2 className="mt-16 font-black text-2xl tracking-wider">other projects</h2>
+            <div className="grid grid-cols-3 gap-x-16 gap-y-8">
                 {projectsElements}
             </div>
         </main>

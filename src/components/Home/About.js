@@ -1,10 +1,20 @@
-import AboutTop from "../../images/about-mushroom_one.png"
-import AboutLeft from "../../images/about-mushroom_three.png"
-import AboutRight from "../../images/about-mushroom_ants.png"
+export default function About(props) {
+    let AboutTop
+    let AboutLeft
+    let AboutRight
 
-export default function About() {
+    if (props.darkMode) {
+        AboutTop = "/images/about-mushroom_one-dark.png"
+        AboutLeft = "/images/about-mushroom_three-dark.png"
+        AboutRight = "/images/about-mushroom_ants-dark.png"
+    } else {
+        AboutTop = "/images/about-mushroom_one-light.png"
+        AboutLeft = "/images/about-mushroom_three-light.png"
+        AboutRight = "/images/about-mushroom_ants-light.png"
+    }
+
     return (
-        <section id="about" className="main--section py-20 px-32 relative text-black dark:text-white bg-white dark:bg-gray-800 -mt-px">
+        <section id="about" className="main--section py-20 px-32 relative text-black dark:text-white bg-secondary transition dark:bg-gray-800 -mt-px">
             {/* Background Elements */}
             <svg className="absolute right-52 top-20 fill-primary" width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z" />
@@ -317,7 +327,7 @@ export default function About() {
                 <p className="font-inter text-sm font-normal leading-6 mt-2">I’m an aspiring frontend developer, self-taught in the ways of the web, courtesy of stackoverflow, online courses and bootcamps. I enjoy crafting clean and robust web applications. Web development allows me to unite my love for design and coding.</p>
             </div>
             <div className="about--design max-w-md mx-auto tracking-wider absolute ">
-                <h3 className="font-nunito w-fit font-black text-2xl pl-3 bg-white dark:bg-gray-800 tracking-wider">design</h3>
+                <h3 className="font-nunito w-fit font-black text-2xl pl-3 bg-secondary transition dark:bg-gray-800 tracking-wider">design</h3>
                 <p className="font-inter text-sm font-normal leading-6 mt-2 ml-3">I have a keen eye when it comes to design. The colors, fonts, even the white space, they speak to me. Perhaps a better way to put it... I can easily communicate my ideas through design.</p>
             </div>
             <div className="about--deploy max-w-md mx-auto tracking-wider absolute pr-10">
