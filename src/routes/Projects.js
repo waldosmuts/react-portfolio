@@ -1,12 +1,12 @@
 import Main from "../components/Projects/Main"
-import Footer from "../components/Footer"
 import Header from "../components/Projects/Header"
+import Footer from "../components/Footer"
 
-export default function Projects() {
+export default function Projects(props) {
     return (
         <>
             <Header />
-            <Main />
+            <Main darkMode={props.darkMode} changeTheme={props.changeTheme} />
             <Footer />
         </>
     )

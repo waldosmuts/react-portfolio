@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 html,
+body {
+    min-height: 100vh;
+}
+
+html,
 #root {
     scroll-behavior: smooth;
 }
@@ -56,24 +61,69 @@ footer {
     scroll-snap-align: end;
 }
 
-.about--developer {
-    top: 132px;
-    left: 510px;
+.about--background-left,
+.about--background-right,
+.experience--background-left,
+.experience--background-right,
+.contact--background,
+.footer--background-left,
+.footer--background-right {
+    pointer-events: none;
 }
 
-.about--design {
-    left: 192px;
-    top: 320px;
+.about--background-left,
+.about--background-right,
+.experience--background-left,
+.experience--background-right {
+    min-width: calc(1440px / 2);
+    height: 800px;
 }
 
-.about--deploy {
-    top: 350px;
-    left: 685px;
+.footer--background-left,
+.footer--background-right,
+.contact--background {
+    min-width: calc(1440px / 2);
 }
 
-.about--develop {
-    top: 465px;
-    left: 480px;
+.about--background-right,
+.experience--background-right,
+.footer--background-right {
+    right: 0;
+}
+
+.about--background-left,
+.experience--background-left,
+.footer--background-left,
+.contact--background {
+    left: 0;
+}
+
+@media screen and (max-width: 1440px) {
+
+    .about--background-left,
+    .experience--background-left,
+    .footer--background-left,
+    .contact--background {
+        left: unset;
+        right: 50vw;
+    }
+
+    .about--background-right,
+    .experience--background-right,
+    .footer--background-right {
+        right: unset;
+        left: 50vw;
+    }
+}
+
+@media screen and (min-height: 800px) {
+
+    .about--background-left,
+    .about--background-right,
+    .experience--background-left,
+    .experience--background-right {
+        height: 100%;
+    }
 }
 
 .experience--top {

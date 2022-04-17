@@ -1,22 +1,10 @@
 import { useEffect, useState } from "react"
-import { initializeApp } from "firebase/app"
-import { collection, getDocs, getFirestore } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore"
+import db from "../../utils/Firestore"
 import Project from "./Project"
+import ThemeSwitch from "../ThemeSwitch"
 
-const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID,
-    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app)
-
-export default function Main() {
+export default function Main(props) {
     const [projects, setProjects] = useState([])
 
     useEffect(() => {
@@ -49,16 +37,15 @@ export default function Main() {
     })
 
     return (
-        <main className="projects--main font-nunito py-16 px-32 text-black dark:text-white bg-secondary transition dark:bg-gray-800 overflow-y-scroll">
-            <h1 className="font-black text-2xl tracking-wider">projects and such</h1>
-            <h2 className="mt-16 font-black text-2xl tracking-wider">featured projects</h2>
-            <div className="grid grid-cols-1 gap-y-8">
+        <main className="projects--main flex flex-col justify-center font-nunito pt-16 pb-52 px-32 -mt-px text-black dark:text-white bg-secondary transition dark:bg-gray-900 overflow-y-scroll">
+            <h1 className="font-nunito text-2xl">my <span className="text-primary underline underline-offset-8 decoration-2 decoration-primary">projects</span></h1>
+            <ThemeSwitch darkMode={props.darkMode} changeTheme={props.changeTheme} />
+            <section className="grid grid-cols-1 gap-y-16 mt-16 place-items-center ml-20 2xl:ml-0">
                 {featuredProjectsElements}
-            </div>
-            <h2 className="mt-16 font-black text-2xl tracking-wider">other projects</h2>
-            <div className="grid grid-cols-3 gap-x-16 gap-y-8">
+            </section>
+            <section className="grid grid-cols-3 gap-12 mt-32 px-16 justify-center">
                 {projectsElements}
-            </div>
+            </section>
         </main>
     )
 }
