@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { collection, getDocs } from "firebase/firestore"
 import db from "../../utils/Firestore"
+import { FeaturedGhost, ProjectGhost } from "./ProjectsGhosts"
 
 export default function Project(props) {
     const [stack, setStack] = useState([])
@@ -30,7 +31,7 @@ export default function Project(props) {
                 return <span key={item} className="text-sm px-4 py-1 bg-tertiary rounded-md tracking-wider shadow-md">{itemData.title}</span>
             })
             return (
-                <div className="flex items-center odd:ml-60 even:mr-60 max-w-4xl">
+                <div id={props.data.id} className="flex items-center odd:ml-60 even:mr-60 max-w-4xl">
                     <Link className="bg-primary shrink-0 rounded-lg overflow-hidden cursor-pointer" to={`/projects/${props.data.id}`}>
                         <img className="w-80 h-80 opacity-50 pointer-events-auto saturate-0 hover:opacity-100 hover:saturate-100 transition" src={props.data.preview} alt="" />
                     </Link>
@@ -71,7 +72,7 @@ export default function Project(props) {
                 return <span key={item} className="text-sm px-4 py-1 bg-secondary dark:bg-gray-700 rounded-md tracking-wider grow text-center">{itemData.title}</span>
             })
             return (
-                <div className="flex flex-col items-center rounded-lg overflow-hidden w-full">
+                <div id={props.data.id} className="flex flex-col items-center rounded-lg overflow-hidden w-full">
                     <Link className="bg-primary cursor-pointer w-full" to={`/projects/${props.data.id}`}>
                         <img className="w-full h-40 object-cover object-top opacity-50 pointer-events-auto saturate-0 hover:opacity-100 hover:saturate-100 transition" src={props.data.preview} alt="" />
                     </Link>
@@ -133,7 +134,7 @@ export default function Project(props) {
         } else {
             return (
                 <div className="flex flex-col items-center rounded-lg overflow-hidden w-full">
-                    <div className="bg-primary w-full h-40 object-cover object-top" src={props.data.preview} alt="" />
+                    <div className="bg-primary w-full h-40 object-cover object-top" />
                     <div className="bg-white dark:bg-gray-800 px-6 pt-8 pb-6 -mt-px w-full h-full relative">
                         <div className="bg-gray-800 dark:bg-white h-6 w-24 opacity-10 rounded-md" />
                         <div className="bg-white dark:bg-gray-700 h-8 w-52 mt-2 rounded-md" />

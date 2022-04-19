@@ -14,14 +14,16 @@ html,
 
 body,
 #root,
-.projects--main {
+.projects--main,
+.project--main {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
 body::-webkit-scrollbar,
 #root::-webkit-scrollbar,
-.projects--main::-webkit-scrollbar {
+.projects--main::-webkit-scrollbar,
+.project--main::-webkit-scrollbar {
     display: none;
 }
 
@@ -38,10 +40,15 @@ img {
 }
 
 .projects--main,
+.project--main,
 .error--main {
     min-height: calc(100vh - 112px);
     scroll-snap-align: start;
     scroll-snap-type: none;
+}
+
+.project--main {
+    height: 100vh;
 }
 
 #root {

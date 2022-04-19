@@ -13,38 +13,48 @@ export default function Project(props) {
     const docRef = doc(db, "projects", projectId)
 
     useEffect(() => {
-        async function getProject() {
-            const docSnap = await getDoc(docRef)
-            if (docSnap.exists()) {
-                setProjectData(docSnap.data())
-            } else {
-                setProjectData(false)
-            }
-        }
-        getProject()
-    }, [docRef])
+        async function getProjectData() {
+            async function getProject() {
+                const docSnap = await getDoc(docRef)
+                if (docSnap.exists()) {
+                    setProjectData(() => {
+                        return {
+                            id: projectId,
+                            ...docSnap.data()
+                        }
 
-    useEffect(() => {
-        async function fetchData() {
-            const stackData = await getDocs(collection(db, "stack"))
-            setStack(() => {
-                return (
-                    stackData.docs.map(item => {
-                        return ({
-                            id: item.id,
-                            ...item.data()
-                        })
                     })
-                )
-            })
+                } else {
+                    setProjectData(false)
+                }
+            }
+
+            async function fetchData() {
+                const stackData = await getDocs(collection(db, "stack"))
+                setStack(() => {
+                    return (
+                        stackData.docs.map(item => {
+                            return ({
+                                id: item.id,
+                                ...item.data()
+                            })
+                        })
+                    )
+                })
+            }
+
+            await getProject()
+            await fetchData()
         }
-        fetchData()
-    }, [projectData])
+
+        getProjectData()
+        // eslint-disable-next-line
+    }, [])
 
     return (
         <>
             <Header />
-            {projectData ? <Main data={projectData} stack={stack} darkMode={props.darkMode} changeTheme={props.changeTheme} /> : <div>no such project exists...</div>}
+            {stack.length ? <Main data={projectData} stack={stack} darkMode={props.darkMode} changeTheme={props.changeTheme} /> : <div>no such project exists...</div>}
             <Footer />
         </>
     )
