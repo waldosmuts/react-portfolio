@@ -1,9 +1,11 @@
 import { doc, getDoc, collection, getDocs } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import db from "../utils/Firestore"
+import Error from "./Error"
 import Header from "../components/Project/Header"
 import Main from "../components/Project/Main"
 import Footer from "../components/Footer"
+import ProjectGhost from "../components/Project/ProjectGhost"
 
 export default function Project(props) {
     const [stack, setStack] = useState([])
@@ -29,7 +31,7 @@ export default function Project(props) {
                 }
             }
 
-            async function fetchData() {
+            async function getStack() {
                 const stackData = await getDocs(collection(db, "stack"))
                 setStack(() => {
                     return (
@@ -44,18 +46,30 @@ export default function Project(props) {
             }
 
             await getProject()
-            await fetchData()
+            await getStack()
         }
 
         getProjectData()
         // eslint-disable-next-line
     }, [])
 
-    return (
-        <>
-            <Header />
-            {stack.length ? <Main data={projectData} stack={stack} darkMode={props.darkMode} changeTheme={props.changeTheme} /> : <div>no such project exists...</div>}
-            <Footer />
-        </>
-    )
+    if (projectData) {
+        return (
+            <>
+                <Header />
+                {
+                    stack.length ?
+                        <Main data={projectData} stack={stack} darkMode={props.darkMode} changeTheme={props.changeTheme} /> :
+                        <ProjectGhost />
+                }
+                <Footer route={"project"} />
+            </>
+        )
+    } else {
+        return (
+            <Error />
+        )
+    }
+
+
 }

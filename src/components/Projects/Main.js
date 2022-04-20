@@ -43,7 +43,7 @@ export default function Main(props) {
                 <FeaturedGhost />
             )
         }
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 5; i++) {
             projectsElements.push(
                 <ProjectGhost />
             )
@@ -52,13 +52,13 @@ export default function Main(props) {
 
 
     return (
-        <main className="projects--main flex flex-col font-nunito pt-16 pb-52 px-32 -mt-px text-black dark:text-white bg-secondary transition dark:bg-gray-900 overflow-y-scroll">
-            <h1 className="font-nunito text-2xl">my <span className="text-primary underline underline-offset-8 decoration-2 decoration-primary">projects</span></h1>
+        <main className="projects--main flex flex-col font-nunito p-4 lg:pt-16 pb-52 px-4 sm:px-16 md:px-32 -mt-px text-black dark:text-white bg-secondary transition dark:bg-gray-900 overflow-y-scroll">
+            <h1 className="font-nunito text-2xl text-center lg:text-left">my <span className="text-primary underline underline-offset-8 decoration-2 decoration-primary">projects</span></h1>
             <ThemeSwitch darkMode={props.darkMode} changeTheme={props.changeTheme} />
-            <section className="grid grid-cols-1 gap-y-16 mt-16 place-items-center ml-20 2xl:ml-0">
+            <section className="grid grid-cols-1 gap-y-8 lg:gap-y-16 mt-8 lg:mt-16 place-items-center lg:ml-20 2xl:ml-0 z-10">
                 {featuredProjectsElements}
             </section>
-            <section className="grid grid-cols-3 2xl:grid-cols-5 gap-12 2xl:gap-6 mt-32 px-16 justify-center">
+            <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-12 2xl:gap-6 mt-16 lg:mt-32 lg:px-4 sm:px-16 md:px-32 justify-center">
                 {projectsElements}
             </section>
         </main>

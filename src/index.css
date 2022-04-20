@@ -8,12 +8,12 @@ body {
 }
 
 html,
-#root {
+#app {
     scroll-behavior: smooth;
 }
 
 body,
-#root,
+#app,
 .projects--main,
 .project--main {
     -ms-overflow-style: none;
@@ -21,7 +21,7 @@ body,
 }
 
 body::-webkit-scrollbar,
-#root::-webkit-scrollbar,
+#app::-webkit-scrollbar,
 .projects--main::-webkit-scrollbar,
 .project--main::-webkit-scrollbar {
     display: none;
@@ -39,19 +39,16 @@ img {
     height: 100vh;
 }
 
+.skills--main,
 .projects--main,
 .project--main,
 .error--main {
-    min-height: calc(100vh - 112px);
+    min-height: 100vh;
     scroll-snap-align: start;
     scroll-snap-type: none;
 }
 
-.project--main {
-    height: 100vh;
-}
-
-#root {
+#app {
     scroll-snap-type: y mandatory;
     scroll-snap-align: start;
     overflow-y: scroll;
@@ -62,6 +59,12 @@ header,
 section {
     scroll-snap-align: start;
     overflow: hidden;
+}
+
+.project--main,
+.project--header,
+.project--footer {
+    scroll-snap-align: none !important;
 }
 
 footer {

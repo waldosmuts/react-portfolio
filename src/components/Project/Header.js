@@ -4,7 +4,7 @@ export default function Header() {
 
 
     return (
-        <header className="bg-secondary dark:bg-gray-900 overflow-visible">
+        <header className="project--header bg-secondary dark:bg-gray-900 overflow-visible">
             <Navbar />
         </header>
     )

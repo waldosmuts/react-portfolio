@@ -7,7 +7,7 @@ export default function Home(props) {
         <>
             <Header darkMode={props.darkMode} changeTheme={props.changeTheme} />
             <Main darkMode={props.darkMode} />
-            <Footer />
+            <Footer route="home" />
         </>
     )
 }

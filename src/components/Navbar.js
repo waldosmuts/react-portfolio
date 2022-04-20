@@ -10,7 +10,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav id="top" className="font-nunito text-xl lg:text-2xl tracking-wider flex justify-between items-center p-10 text-black dark:text-white z-30 relative">
+        <nav id="top" className="font-nunito text-xl lg:text-2xl tracking-wider flex justify-between items-center p-10 text-black dark:text-white z-50 relative">
             <Link className="transition hover:text-primary underline underline-offset-8 decoration-2 decoration-primary -mt-1" to="/">waldo</Link>
             <div className={`nav--right rounded-xl md:rounded-none bg-primary md:bg-transparent text-lg lg:text-xl gap-3 md:gap-12 absolute py-10 md:py-0 top-8 md:top-0 right-8 md:right-0 md:relative flex ${showNav ? "" : "hidden"} md:flex flex-col md:flex-row`}>
                 <HashLink className=" pl-6 pr-12 md:px-0 transition hover:text-highlight md:hover-text-primary underline underline-offset-8 decoration-2 decoration-transparent hover:decoration-highlight md:hover:decoration-primary" to="/#about">about</HashLink>
