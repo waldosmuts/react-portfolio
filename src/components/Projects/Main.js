@@ -7,6 +7,17 @@ import { FeaturedGhost, ProjectGhost } from "./ProjectsGhosts"
 
 export default function Main(props) {
     const [projects, setProjects] = useState([])
+    const [projectCount, setProjectCount] = useState(() => {
+        if (window.innerWidth > 1536) {
+            return 4
+        } else if (window.innerWidth > 1280) {
+            return 3
+        } else if (window.innerWidth > 1024) {
+            return 2
+        } else {
+            return 1
+        }
+    })
 
     useEffect(() => {
         async function fetchData() {
@@ -24,6 +35,20 @@ export default function Main(props) {
         }
         fetchData()
     }, [])
+
+    function handleClick() {
+        setProjectCount(prevProjectCount => {
+            if (window.innerWidth > 1536) {
+                return prevProjectCount + 4
+            } else if (window.innerWidth > 1280) {
+                return prevProjectCount + 3
+            } else if (window.innerWidth > 1024) {
+                return prevProjectCount + 2
+            } else {
+                return prevProjectCount + 1
+            }
+        })
+    }
 
     const featuredProjectsElements = []
     const projectsElements = []
@@ -58,9 +83,10 @@ export default function Main(props) {
             <section className="grid grid-cols-1 gap-y-8 lg:gap-y-16 mt-8 lg:mt-16 place-items-center lg:ml-20 2xl:ml-0 z-10">
                 {featuredProjectsElements}
             </section>
-            <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-12 2xl:gap-6 mt-16 lg:mt-32 lg:px-4 sm:px-16 md:px-32 justify-center">
-                {projectsElements}
+            <section className="grid grid-cols-1 overflow-hidden lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-12 2xl:gap-6 mt-16 lg:mt-32 lg:px-4 sm:px-16 md:px-32 justify-center">
+                {projectsElements.slice(0, projectCount)}
             </section>
+            <button className="bg-primary text-white py-2 lg:mx-4 rounded-md mt-6" onClick={handleClick}>Show more</button>
         </main>
     )
 }
