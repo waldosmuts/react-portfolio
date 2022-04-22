@@ -8,21 +8,25 @@ export default function Contact() {
         message: "",
         reply_to: ""
     })
+    const [emailSent, setEmailSent] = useState(false)
 
     function handleSubmit(e) {
         e.preventDefault()
-        send(
-            process.env.REACT_APP_SERVICE_ID,
-            process.env.REACT_APP_TEMPLATE_ID,
-            emailData,
-            process.env.REACT_APP_USER_ID
-        )
-            .then((res) => {
-                console.log("SUCCESS", res.status, res.text);
-            })
-            .catch((err) => {
-                console.log("FAILED", err);
-            })
+        if (!emailSent) {
+            send(
+                process.env.REACT_APP_SERVICE_ID,
+                process.env.REACT_APP_TEMPLATE_ID,
+                emailData,
+                process.env.REACT_APP_USER_ID
+            )
+                .then((res) => {
+                    console.log("SUCCESS", res.status, res.text)
+                    setEmailSent(true)
+                })
+                .catch((err) => {
+                    console.log("FAILED", err)
+                })
+        }
     }
 
     function handleChange(e) {
@@ -74,7 +78,7 @@ export default function Contact() {
                     <svg className="absolute left-1/2 -translate-x-1/2" width="105" height="32" viewBox="0 0 105 32" xmlns="http://www.w3.org/2000/svg">
                         <path d="M93.0078 29.8618C95.0187 29.8386 97.2364 29.7248 98.6588 28.6204C99.8192 27.7176 100.144 26.3981 100.412 25.116L103.789 9.23631C104.236 7.12885 104.625 4.81628 103.131 3.0106C101.111 0.608242 96.7744 0.379046 93.0734 0.414476L15.1151 1.02895C12.3992 0.952449 9.68083 1.17443 7.0401 1.6883C5.71979 1.95327 4.48452 2.43182 3.41503 3.0927C2.34555 3.75358 1.46591 4.58192 0.833601 5.52356C-0.351664 7.54398 0.10037 9.89098 0.578859 12.0759L3.2205 24.1371C3.43651 25.7537 4.0577 27.3199 5.04895 28.7469C7.83657 32.1989 14.0657 31.1345 18.4555 31.0618C24.4849 30.9627 30.5174 30.866 36.5531 30.7717L73.107 30.1801L93.0078 29.8618Z" />
                     </svg>
-                    <span className="relative top-px">whoosh</span>
+                    <span className={`relative top-px ${emailSent ? "pointer-events-none" : ""}`}>{emailSent ? "whoosh" : "send"}</span>
                 </button>
             </form>
         </section>
