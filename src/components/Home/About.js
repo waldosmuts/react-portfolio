@@ -326,7 +326,7 @@ export default function About(props) {
             </div>
             {/* Main Content */}
             <h2 className="font-nunito text-2xl"><span className="text-primary underline underline-offset-8 decoration-2 decoration-primary">about</span> me</h2>
-            <div className="flex flex-col items-center mt-8 lg:mt-12 h-full gap-y-8 lg:gap-y-0 2xl:gap-y-16 relative">
+            <div className="flex flex-col items-center justify-start mt-12 h-full gap-y-8 lg:gap-y-0 2xl:gap-y-16 relative">
                 <div className="about--developer max-w-md tracking-wider">
                     <h3 className="font-nunito font-black text-xl lg:text-2xl 2xl:text-3xl tracking-wider">developer</h3>
                     <p className="font-inter text-xs lg:text-sm 2xl:text-base font-normal leading-5 lg:leading-6 mt-2">I’m an aspiring frontend developer, self-taught in the ways of the web, courtesy of stackoverflow, online courses and bootcamps. I enjoy crafting clean and robust web applications. Web development allows me to unite my love for design and coding.</p>

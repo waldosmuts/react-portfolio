@@ -12,10 +12,8 @@ export default function Main(props) {
             return 4
         } else if (window.innerWidth > 1280) {
             return 3
-        } else if (window.innerWidth > 1024) {
-            return 2
         } else {
-            return 1
+            return 2
         }
     })
 
@@ -42,10 +40,8 @@ export default function Main(props) {
                 return prevProjectCount + 4
             } else if (window.innerWidth > 1280) {
                 return prevProjectCount + 3
-            } else if (window.innerWidth > 1024) {
-                return prevProjectCount + 2
             } else {
-                return prevProjectCount + 1
+                return prevProjectCount + 2
             }
         })
     }
@@ -86,7 +82,7 @@ export default function Main(props) {
             <section className="grid grid-cols-1 overflow-hidden lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-12 2xl:gap-6 mt-16 lg:mt-32 lg:px-4 sm:px-16 md:px-32 justify-center">
                 {projectsElements.slice(0, projectCount)}
             </section>
-            <button className="bg-primary text-white py-2 lg:mx-4 rounded-md mt-6" onClick={handleClick}>Show more</button>
+            {projectCount < projectsElements.length && <button className="bg-primary text-white py-2 lg:mx-4 rounded-md mt-6" onClick={handleClick}>Show more</button>}
         </main>
     )
 }

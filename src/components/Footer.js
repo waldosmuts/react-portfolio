@@ -4,7 +4,7 @@ import { HashLink } from 'react-router-hash-link'
 export default function Footer(props) {
     return (
         <footer className={`${props.route && `${props.route}--footer`} flex flex-col items-center justify-between pt-10 pb-5 text-white bg-primary relative overflow-hidden z-20`}>
-            <div className="footer--background-left absolute h-full top-0">
+            <div className="footer--background-left absolute h-full top-0 hidden lg:block">
                 {
                     props.route === "home" ?
                         <svg className="absolute top-0 left-36 fill-secondary dark:fill-gray-800" width="224" height="140" viewBox="0 0 224 140" xmlns="http://www.w3.org/2000/svg">
@@ -159,7 +159,7 @@ export default function Footer(props) {
                     <path d="M277.5 280C278.881 280 280 278.881 280 277.5C280 276.119 278.881 275 277.5 275C276.119 275 275 276.119 275 277.5C275 278.881 276.119 280 277.5 280Z" />
                 </svg>
             </div>
-            <div className="footer--background-right absolute h-full top-0">
+            <div className="footer--background-right absolute h-full top-0 hidden lg:block">
                 <svg className="absolute fill-white right-64 -top-24" width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2.5 5C3.88071 5 5 3.88071 5 2.5C5 1.11929 3.88071 0 2.5 0C1.11929 0 0 1.11929 0 2.5C0 3.88071 1.11929 5 2.5 5Z" />
                     <path d="M27.5 5C28.8807 5 30 3.88071 30 2.5C30 1.11929 28.8807 0 27.5 0C26.1193 0 25 1.11929 25 2.5C25 3.88071 26.1193 5 27.5 5Z" />

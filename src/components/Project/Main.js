@@ -13,7 +13,7 @@ export default function Main(props) {
             <h1 className="text-xl lg:text-2xl xl:text-3xl mt-8 lg:mt-0 font-black tracking-wider text-center">{props.data.title}</h1>
             <img className="rounded-xl max-w-md w-full shrink-0 shadow-md mt-8" src={props.data.preview} alt="" />
             <div className="flex flex-col lg:flex-row mt-8 max-w-xl">
-                <p className="text-lg bg-white dark:bg-gray-800 px-10 pt-8 pb-20 lg:pb-10 lg:mr-2 mt-4 lg:mt-0 rounded-md order-2 lg:order-1">{props.data.description}</p>
+                <p className="text-lg bg-white dark:bg-gray-800 px-10 pt-8 pb-10 lg:mr-2 mt-2 lg:mt-0 rounded-md order-2 lg:order-1">{props.data.description}</p>
                 <div className="flex flex-row lg:flex-col gap-2 order-1 lg:order-2">
                     <a className="flex justify-center w-full items-center lg:aspect-square py-3 lg:py-0 lg:px-2 rounded-md uppercase tracking-wider text-sm bg-tertiary hover:bg-highlight stroke-white stroke-2 fill-transparent" href={props.data.live} target="_blank" rel="noreferrer">
                         <svg width="18" height="18" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +28,7 @@ export default function Main(props) {
                     </a>
                 </div>
             </div>
-            <div className="flex w-full max-w-xl flex-wrap gap-2 mt-4 lg:mt-2">
+            <div className="flex w-full max-w-xl flex-wrap gap-2 mt-2">
                 {stackElements}
             </div>
             <ThemeSwitch darkMode={props.darkMode} changeTheme={props.changeTheme} />
