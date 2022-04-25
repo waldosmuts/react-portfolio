@@ -14,7 +14,7 @@ export default function Experience(props) {
     }
 
     return (
-        <section id="experience" className="main--section py-10 lg:py-20 px-8 md:px-16 lg:px-32 relative text-black dark:text-white  bg-white dark:bg-gray-900">
+        <section id="experience" className="main--section transition-colors duration-300 py-10 lg:py-20 px-8 md:px-16 lg:px-32 relative text-black dark:text-white  bg-white dark:bg-gray-900">
             {/* Background Elements */}
             <div className="experience--background-left absolute h-full top-0 hidden lg:block">
                 <svg className="absolute -left-36 top-64 fill-primary" width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
@@ -514,15 +514,15 @@ export default function Experience(props) {
                     <ul className="flex flex-col gap-3">
                         <li>
                             <h4 className="font-inter text-lg lg:text-xl 2xl:text-2xl tracking-wider mt-3 leading-5">React Bootcamp <span className="text-primary">/w Bob Ziroll</span></h4>
-                            <h5 className="font-inter text-primary text-xs lg:text-sm 2xl:text-base">@Scrimba <span className="text-black dark:text-white opacity-50">Feb 2022 - Mar 2022</span></h5>
+                            <h5 className="font-inter text-primary text-xs lg:text-sm 2xl:text-base">@Scrimba <span className="transition-colors duration-300 text-black dark:text-white opacity-50">Feb 2022 - Mar 2022</span></h5>
                         </li>
                         <li>
                             <h4 className="font-inter text-lg lg:text-xl 2xl:text-2xl tracking-wider mt-3 leading-5">Web Development Bootcamp <span className="text-primary">/w Colt Steele</span></h4>
-                            <h5 className="font-inter text-primary text-xs lg:text-sm 2xl:text-base">@Udemy <span className="text-black dark:text-white opacity-50">Apr 2021 - Oct 2021</span></h5>
+                            <h5 className="font-inter text-primary text-xs lg:text-sm 2xl:text-base">@Udemy <span className="transition-colors duration-300 text-black dark:text-white opacity-50">Apr 2021 - Oct 2021</span></h5>
                         </li>
                         <li>
                             <h4 className="font-inter text-lg lg:text-xl 2xl:text-2xl tracking-wider mt-3 leading-5">High School Diploma <span className="text-primary">{"(NSC)"}</span></h4>
-                            <h5 className="font-inter text-primary text-xs lg:text-sm 2xl:text-base">@Hermanus High School <span className="text-black dark:text-white opacity-50">Jan 2019</span></h5>
+                            <h5 className="font-inter text-primary text-xs lg:text-sm 2xl:text-base">@Hermanus High School <span className="transition-colors duration-300 text-black dark:text-white opacity-50">Jan 2019</span></h5>
                         </li>
                     </ul>
                 </div>

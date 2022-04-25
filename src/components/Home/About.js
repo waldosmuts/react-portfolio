@@ -14,7 +14,7 @@ export default function About(props) {
     }
 
     return (
-        <section id="about" className="main--section py-10 lg:py-20 px-8 md:px-16 lg:px-32 relative text-black dark:text-white bg-secondary transition dark:bg-gray-800 -mt-px">
+        <section id="about" className="main--section py-10 lg:py-20 px-8 md:px-16 lg:px-32 relative transition-colors duration-300 text-black dark:text-white bg-secondary dark:bg-gray-800 -mt-px">
             {/* Background Elements */}
             <div className="about--background-right absolute h-full top-0">
                 <svg className="hidden lg:block absolute right-52 top-20 fill-primary" width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
@@ -333,7 +333,7 @@ export default function About(props) {
                 </div>
                 <div className="flex flex-col lg:flex-row gap-y-8 lg:gap-x-16 2xl:gap-x-32">
                     <div className="about--design max-w-md tracking-wider">
-                        <h3 className="font-nunito w-fit font-black text-xl lg:text-2xl 2xl:text-3xl lg:pl-3 bg-secondary transition dark:bg-gray-800 tracking-wider relative">design</h3>
+                        <h3 className="font-nunito w-fit font-black text-xl lg:text-2xl 2xl:text-3xl lg:pl-3 transition-colors duration-300 bg-secondary dark:bg-gray-800 tracking-wider relative">design</h3>
                         <p className="font-inter text-xs lg:text-sm 2xl:text-base font-normal leading-5 lg:leading-6 mt-2 lg:ml-3">I have a keen eye when it comes to design. The colors, fonts, even the white space, they speak to me. Perhaps a better way to put it... I can easily communicate my ideas through design.</p>
                     </div>
                     <div className="about--deploy max-w-md tracking-wider lg:mt-8">

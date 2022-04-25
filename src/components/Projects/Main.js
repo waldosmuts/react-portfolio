@@ -61,12 +61,12 @@ export default function Main(props) {
     } else {
         for (let i = 0; i < 3; i++) {
             featuredProjectsElements.push(
-                <FeaturedGhost />
+                <FeaturedGhost key={`featured-ghost-${i}`} />
             )
         }
         for (let i = 0; i < 5; i++) {
             projectsElements.push(
-                <ProjectGhost />
+                <ProjectGhost key={`ghost-${i}`} />
             )
         }
     }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 export default function Error() {
     return (
         <>
-            <header className="bg-secondary dark:bg-gray-900 overflow-visible">
+            <header className="transition-colors duration-300 bg-secondary dark:bg-gray-900 overflow-visible">
                 <Navbar />
             </header>
             <main className="error--main flex flex-col justify-center items-center font-nunito text-black dark:text-white pb-24 relative">

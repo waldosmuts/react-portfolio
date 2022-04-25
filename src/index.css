@@ -8,12 +8,14 @@ body {
 }
 
 html,
-#app {
+#app,
+.app--container {
     scroll-behavior: smooth;
 }
 
 body,
 #app,
+.app--container,
 .projects--main,
 .project--main {
     -ms-overflow-style: none;
@@ -22,6 +24,7 @@ body,
 
 body::-webkit-scrollbar,
 #app::-webkit-scrollbar,
+.app--container::-webkit-scrollbar,
 .projects--main::-webkit-scrollbar,
 .project--main::-webkit-scrollbar {
     display: none;
@@ -47,7 +50,7 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-    #app {
+    .app--container {
         scroll-snap-type: y mandatory;
         scroll-snap-align: start;
         overflow-y: scroll;
@@ -55,27 +58,22 @@ img {
     }
 
     .skills--main,
-    .projects--main,
-    .project--main,
     .error--main {
         min-height: 100vh;
         scroll-snap-align: start;
         scroll-snap-type: none;
     }
 
-    header,
-    section {
+    .home--container header,
+    .skills--container header,
+    .home--container section,
+    .skills--container section {
         scroll-snap-align: start;
         overflow: hidden;
     }
 
-    .project--main,
-    .project--header,
-    .project--footer {
-        scroll-snap-align: none !important;
-    }
-
-    footer {
+    .home--container footer,
+    .skills--container footer {
         scroll-snap-align: end;
     }
 }

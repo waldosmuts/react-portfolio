@@ -5,7 +5,7 @@ import Projects from "./routes/Projects";
 import Project from "./routes/Project";
 import Error from "./routes/Error";
 import { useState } from "react";
-// import Seed from "./seed";
+// import Seed from "./Seed";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") || false)
@@ -19,15 +19,15 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className="app--container">
       <Routes>
-        <Route className="container--home" path="/" element={<Home darkMode={darkMode} changeTheme={changeTheme} />} />
-        <Route className="container--skills" path="skills" element={<Skills darkMode={darkMode} changeTheme={changeTheme} />} />
-        <Route className="container--projects" path="projects" element={<Projects darkMode={darkMode} changeTheme={changeTheme} />} />
-        <Route className="container--project" path="projects/*" element={<Project darkMode={darkMode} changeTheme={changeTheme} />} />
+        <Route path="/" element={<Home darkMode={darkMode} changeTheme={changeTheme} />} />
+        <Route path="skills" element={<Skills darkMode={darkMode} changeTheme={changeTheme} />} />
+        <Route path="projects" element={<Projects darkMode={darkMode} changeTheme={changeTheme} />} />
+        <Route path="projects/*" element={<Project darkMode={darkMode} changeTheme={changeTheme} />} />
         {/* <Route path="seed" element={<Seed />} /> */}
-        <Route className="container--error" path="*" element={<Error darkMode={darkMode} changeTheme={changeTheme} />} />
+        <Route path="*" element={<Error darkMode={darkMode} changeTheme={changeTheme} />} />
       </Routes>
-    </>
+    </div>
   );
 }

@@ -39,7 +39,7 @@ export default function Contact() {
     }
 
     return (
-        <section id="contact" className="flex flex-col justify-center items-center main--section py-10 lg:py-20 px-8 md:px-16 lg:px-32 relative text-black dark:text-white  bg-secondary transition dark:bg-gray-800">
+        <section id="contact" className="flex flex-col justify-center items-center main--section py-10 lg:py-20 px-8 md:px-16 lg:px-32 relative transition-colors duration-300 text-black dark:text-white  bg-secondary dark:bg-gray-800">
             {/* Background Elements */}
             <div className="contact--background absolute h-full top-0">
                 <svg className="absolute bottom-0 left-36 fill-primary" width="224" height="116" viewBox="0 0 224 116" xmlns="http://www.w3.org/2000/svg">

@@ -4,7 +4,7 @@ import ThemeSwitch from "../ThemeSwitch"
 export default function Main(props) {
     const stackElements = props.data.stack.map(item => {
         const itemData = props.stack.find(i => (i.id === item))
-        return <span key={item} className="text-white grow text-center text-sm px-4 py-1 bg-tertiary rounded-md tracking-wider shadow-md">{itemData.title}</span>
+        return <span key={item} className="transition-colors duration-300 text-white grow text-center text-sm px-4 py-1 bg-tertiary rounded-md tracking-wider shadow-md">{itemData.title}</span>
     })
 
     return (

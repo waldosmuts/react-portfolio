@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link'
 
 export default function Footer(props) {
     return (
-        <footer className={`${props.route && `${props.route}--footer`} flex flex-col items-center justify-between pt-10 pb-5 text-white bg-primary relative overflow-hidden z-20`}>
+        <footer className={`${props.route && `${props.route}--footer`} transition-colors duration-300 flex flex-col items-center justify-between pt-10 pb-5 text-white bg-primary relative overflow-hidden z-20`}>
             <div className="footer--background-left absolute h-full top-0 hidden lg:block">
                 {
                     props.route === "home" ?
