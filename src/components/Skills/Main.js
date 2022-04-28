@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import db from "../../utils/Firestore"
 import { collection, getDocs } from "firebase/firestore"
 import ThemeSwitch from "../ThemeSwitch"
-import { stackData } from "../../PortfolioData"
+// import { stackData } from "../../PortfolioData"
 
 export default function Main(props) {
     const [stack, setStack] = useState([])
@@ -23,11 +23,11 @@ export default function Main(props) {
             })
         }
 
-        if (process.env.NODE_ENV === "development") {
-            setStack(stackData)
-        } else {
-            getStack()
-        }
+        // if (process.env.NODE_ENV === "development") {
+        //     setStack(stackData)
+        // } else {
+        getStack()
+        // }
     }, [])
 
     function handleClick(e) {
