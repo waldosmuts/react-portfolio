@@ -1,0 +1,18 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <link type="text/css" rel="stylesheet" id="dark-mode-custom-link"/>
+    <link type="text/css" rel="stylesheet" id="dark-mode-general-link"/>
+    <style lang="en" type="text/css" id="dark-mode-custom-style"/>
+    <style lang="en" type="text/css" id="dark-mode-native-style"/>
+    <url>
+        <loc>https://waldosmuts.netlify.app/</loc>
+        <lastmod>2022-04-28</lastmod>
+    </url>
+    <url>
+        <loc>https://waldosmuts.netlify.app/projects</loc>
+        <lastmod>2022-04-28</lastmod>
+    </url>
+    <url>
+        <loc>https://waldosmuts.netlify.app/skills</loc>
+        <lastmod>2022-04-28</lastmod>
+    </url>
+</urlset>
